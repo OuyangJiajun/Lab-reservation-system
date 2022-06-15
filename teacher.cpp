@@ -43,7 +43,7 @@ void Teacher::showAllOrder()
 		cout << "\t时段：" << ((of.m_orderData[i]["interval"] == "1") ? "上午" : "下午");
 		cout << "\t学号：" << of.m_orderData[i]["stuId"];
 		cout << "\t姓名：" << of.m_orderData[i]["stuName"];
-		cout << "\t机房：" << of.m_orderData[i]["roomId"];
+		cout << "\t实验室：" << of.m_orderData[i]["roomId"];
 		string status = "\t状态：";
 		if (of.m_orderData[i]["status"] == "1")
 		{
@@ -90,7 +90,7 @@ void Teacher::validOrder()
 			cout << ++index << "、";
 			cout << "预约日期：周" << of.m_orderData[i]["date"];
 			cout << "\t时段：" << ((of.m_orderData[i]["interval"] == "1") ? "上午" : "下午");
-			cout << "\t机房：" << of.m_orderData[i]["roomId"];
+			cout << "\t实验室：" << of.m_orderData[i]["roomId"];
 			string status = "\t状态：";
 			if (of.m_orderData[i]["status"] == "1")
 			{

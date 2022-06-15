@@ -12,8 +12,8 @@ Student::Student(int id, string name, string pwd)
 	m_Name = name;
 	m_Pwd = pwd;
 
-	//初始化机房容器
-	initComVector();
+	//初始化实验室容器
+	initLabVector();
 }
 
 //菜单界面
@@ -35,9 +35,9 @@ void Student::applyOrder()
 {
 	int date = 0;//接收周一到周五
 	int interval = 0;//接收上午或下午
-	int room = 0;//接收机房号
+	int room = 0;//接收实验室号
 
-	cout << "机房开放时间为周一至周五！" << endl;
+	cout << "实验室开放时间为周一至周五！" << endl;
 	cout << "请输入申请预约的时间：" << endl;
 	cout << "1、周一" << endl;
 	cout << "2、周二" << endl;
@@ -73,10 +73,10 @@ void Student::applyOrder()
 		}
 	}
 
-	cout << "请输入申请预约的机房：" << endl;
-	for (int i = 0; i < vCom.size(); i++)
+	cout << "请输入申请预约的实验室：" << endl;
+	for (int i = 0; i < vLab.size(); i++)
 	{
-		cout << vCom[i].m_ComId << "号机房容量为：" << vCom[i].m_MaxNum << endl;
+		cout << vLab[i].m_LabId << "号实验室容量为：" << vLab[i].m_MaxNum << endl;
 	}
 	while (true)
 	{
@@ -118,7 +118,7 @@ void Student::showMyOrder()
 		{
 			cout << "预约日期：周" << of.m_orderData[i]["date"];
 			cout << "\t时段：" << ((of.m_orderData[i]["interval"] == "1") ? "上午": "下午");
-			cout << "\t机房：" << of.m_orderData[i]["roomId"];
+			cout << "\t实验室：" << of.m_orderData[i]["roomId"];
 			string status = "\t状态：";
 			if (of.m_orderData[i]["status"] == "1")
 			{
@@ -159,7 +159,7 @@ void Student::showAllOrder()
 		cout << "\t时段：" << ((of.m_orderData[i]["interval"] == "1") ? "上午" : "下午");
 		cout << "\t学号：" << of.m_orderData[i]["stuId"];
 		cout << "\t姓名：" << of.m_orderData[i]["stuName"];
-		cout << "\t机房：" << of.m_orderData[i]["roomId"];
+		cout << "\t实验室：" << of.m_orderData[i]["roomId"];
 		string status = "\t状态：";
 		if (of.m_orderData[i]["status"] == "1")
 		{
@@ -209,7 +209,7 @@ void Student::cancelOrder()
 				cout << index++ << "、";
 				cout << "预约日期：周" << of.m_orderData[i]["date"];
 				cout << "\t时段：" << ((of.m_orderData[i]["interval"] == "1") ? "上午" : "下午");
-				cout << "\t机房：" << of.m_orderData[i]["roomId"];
+				cout << "\t实验室：" << of.m_orderData[i]["roomId"];
 				string status = "\t状态：";
 				if (of.m_orderData[i]["status"] == "1")
 				{
@@ -257,8 +257,8 @@ void Student::cancelOrder()
 	system("pause");
 }
 
-//初始化机房容器
-void Student::initComVector()
+//初始化实验室容器
+void Student::initLabVector()
 {
 	ifstream ifs;
 	ifs.open(COMPUTER_FILE, ios::in);
@@ -268,12 +268,12 @@ void Student::initComVector()
 		return;
 	}
 
-	vCom.clear();
+	vLab.clear();
 
-	ComputerRoom c;
-	while (ifs >> c.m_ComId && ifs >> c.m_MaxNum)
+	Lab c;
+	while (ifs >> c.m_LabId && ifs >> c.m_MaxNum)
 	{
-		vCom.push_back(c);
+		vLab.push_back(c);
 	}
 	ifs.close();
 }

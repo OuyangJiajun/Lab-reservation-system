@@ -33,8 +33,8 @@ void managerMenu(Identity*& manager)//Ö¸ÕëÒıÓÃĞÎÊ½£¬deleteºó£¬¸ÃÖ¸Õë=NULL¼´Ô­Ö¸Õ
 		case 2://²é¿´ÕËºÅ
 			man->showPerson();
 			break;
-		case 3://²é¿´»ú·¿
-			man->showComputer();
+		case 3://²é¿´ÊµÑéÊÒ
+			man->showLab();
 			break;
 		case 4://Çå¿ÕÔ¤Ô¼
 			man->cleanFile();
@@ -228,7 +228,9 @@ int main()
 		cout << "\t\t------------------------" << endl;
 		cout << "ÇëÊäÈëÄúµÄÑ¡Ôñ:";
 
-		cin >> select;//´ıÓÅ»¯,ÊäÈë×ÖÄ¸»áÏİÈëËÀÑ­»·
+		cin >> select;//ÊäÈë×ÖÄ¸»áÏİÈëËÀÑ­»·
+
+		if (select != 0 && select != 1 && select != 2 && select != 3) continue;//½â¾öËÀÑ­»·µÄÎÊÌâ
 
 		switch (select)
 		{

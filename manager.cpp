@@ -15,8 +15,8 @@ Manager::Manager(string name, string pwd)
 	//初始化老师和学生容器
 	initVector();
 
-	//初始化机房容器
-	initComVector();
+	//初始化实验室容器
+	initLabVector();
 }
 
 //菜单界面
@@ -26,7 +26,7 @@ void Manager::openMenu()
 	cout << "\t\t------------------------" << endl;
 	cout << "\t\t|  1.  添加账号        |" << endl;
 	cout << "\t\t|  2.  查看账号        |" << endl;
-	cout << "\t\t|  3.  查看机房        |" << endl;
+	cout << "\t\t|  3.  查看实验室        |" << endl;
 	cout << "\t\t|  4.  清空预约        |" << endl;
 	cout << "\t\t|  0.  注销登陆        |" << endl;
 	cout << "\t\t------------------------" << endl;
@@ -143,13 +143,13 @@ void Manager::showPerson()
 	system("pause");
 }
 
-//查看机房信息
-void Manager::showComputer()
+//查看实验室信息
+void Manager::showLab()
 {
-	cout << "机房信息如下：" << endl;
-	for (vector<ComputerRoom>::iterator it = vCom.begin(); it != vCom.end(); it++)
+	cout << "实验室信息如下：" << endl;
+	for (vector<Lab>::iterator it = vLab.begin(); it != vLab.end(); it++)
 	{
-		cout << "机房编号：" << it->m_ComId << "\t机房最大容量：" << it->m_MaxNum << endl;
+		cout << "实验室编号：" << it->m_LabId << "\t实验室最大容量：" << it->m_MaxNum << endl;
 	}
 	system("pause");
 }
@@ -203,8 +203,8 @@ void Manager::initVector()
 	ifs.close();
 }
 
-//初始化机房容器
-void Manager::initComVector()
+//初始化实验室容器
+void Manager::initLabVector()
 {
 	ifstream ifs;
 	ifs.open(COMPUTER_FILE, ios::in);
@@ -214,12 +214,12 @@ void Manager::initComVector()
 		return;
 	}
 
-	vCom.clear();
+	vLab.clear();
 
-	ComputerRoom c;
-	while (ifs >> c.m_ComId && ifs >> c.m_MaxNum)
+	Lab c;
+	while (ifs >> c.m_LabId && ifs >> c.m_MaxNum)
 	{
-		vCom.push_back(c);
+		vLab.push_back(c);
 	}
 	ifs.close();
 }

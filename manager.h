@@ -8,7 +8,7 @@
 #include "student.h"
 #include "teacher.h"
 #include "globalFile.h"
-#include "computerRoom.h"
+#include "lab.h"
 using namespace std;
 
 class Manager :public Identity
@@ -29,8 +29,8 @@ public:
 	//查看账号
 	void showPerson();
 
-	//查看机房信息
-	void showComputer();
+	//查看实验室信息
+	void showLab();
 
 	//清空预约记录
 	void cleanFile();
@@ -38,8 +38,8 @@ public:
 	//初始化老师和学生容器
 	void initVector();
 
-	//初始化机房容器
-	void initComVector();
+	//初始化实验室容器
+	void initLabVector();
 
 	//检测重复
 	bool checkRepeat(int id, int type);
@@ -50,6 +50,6 @@ public:
 	//教师容器
 	vector<Teacher> vTea;
 
-	//机房信息
-	vector<ComputerRoom> vCom;
+	//实验室信息
+	vector<Lab> vLab;
 };

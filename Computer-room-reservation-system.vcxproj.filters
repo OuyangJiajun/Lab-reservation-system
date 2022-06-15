@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="机房预约系统.cpp">
+    <ClCompile Include="实验室预约系统.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="manager.cpp">
@@ -33,7 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="admin.txt" />
-    <Text Include="computerRoom.txt" />
+    <Text Include="lab.txt" />
     <Text Include="order.txt" />
     <Text Include="student.txt" />
     <Text Include="teacher.txt" />
@@ -54,7 +54,7 @@
     <ClInclude Include="teacher.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="computerRoom.h">
+    <ClInclude Include="lab.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="orderFile.h">

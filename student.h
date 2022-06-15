@@ -4,7 +4,7 @@
 #include <vector>
 #include <fstream>
 #include "identity.h"
-#include "computerRoom.h"
+#include "lab.h"
 #include "globalFile.h"
 #include "orderFile.h"
 using namespace std;
@@ -33,12 +33,12 @@ public:
 	//取消预约
 	void cancelOrder();
 
-	//初始化机房容器
-	void initComVector();
+	//初始化实验室容器
+	void initLabVector();
 	
 	//学号
 	int m_Id;
 
-	//机房信息
-	vector<ComputerRoom> vCom;
+	//实验室信息
+	vector<Lab> vLab;
 };

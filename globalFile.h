@@ -10,8 +10,8 @@
 //教师文件
 #define TEACHER_FILE "teacher.txt"
 
-//机房信息文件
-#define COMPUTER_FILE "computerRoom.txt"
+//实验室信息文件
+#define COMPUTER_FILE "lab.txt"
 
 //订单文件
 #define ORDER_FILE "order.txt"
